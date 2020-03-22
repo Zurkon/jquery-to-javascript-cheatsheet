@@ -14,7 +14,7 @@ This repository is just a copy from the blog page [move from jquery to vanilla j
 * [Document Ready](#document-ready)
 * [Classes](#classes)
 * [Ajax](#ajax)
-* [HTML & Text](#html-&-text)
+* [HTML & Text](#html-and-text)
 
 # Selecting Elements
 Selecting one or several DOM elements to do something with is one of the most basic elements of jQuery. The equivalent to $() or jQuery() in JavaScript is [querySelector()](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector) or [querySelectorAll()](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll), which, just like with jQuery, you can call with a CSS selector.
@@ -308,7 +308,7 @@ fetch("data.json")
 
 ```
 
-# HTML & Text
+# HTML and Text
 
 If you want to dynamically create an element in javascript to add to the DOM you can call [createElement()](https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement) on `document` and pass it a tag name to indicate what element you want to create:
 
