@@ -142,3 +142,82 @@ document.dispatchEvent(new Event("myEvent"));
 document.querySelector(".box").dispatchEvent(new Event("myEvent"));
 
 ```
+# CSS
+
+If you're calling `.css()` on an element to change its inline CSS with jQuery, you'd use [.style](https://developer.mozilla.org/en-US/docs/Web/API/ElementCSSInlineStyle/style) in Javascript and assign values to its different properties to achieve the same effect:
+
+```javacript
+
+// With jQuery
+// Select .box and change text color to #000
+$(".box").css("color", "#000");
+
+// Without jQuery
+// Select the first .box and change its text color to #000
+document.querySelector(".box").style.color = "#000";
+
+```
+
+With jQuery, you can pass an object with key-value pairs to style many properties at once. In Javascript you can set the values one at a time, or set the entire style string:
+
+```javascript
+
+// With jQuery
+// Pass multiple styles
+$(".box").css({
+  "color": "#000",
+  "background-color": "red"
+});
+
+// Without jQuery
+// Set color to #000 and background to red
+var box = document.querySelector(".box");
+box.style.color = "#000";
+box.style.backgroundColor = "red";
+
+// Set all styles at once (and override any existing styles)
+box.style.cssText = "color: #000; background-color: red";
+
+```
+
+## `hide()` and `show()`
+
+The `.hide()` and `.show()` convenience methods are equivalent to acessing the `.style` property and setting `display` to `none` and `block`:
+
+```javascript
+
+// With jQuery
+// Hide and show and element
+$(".box").hide();
+$(".box").show();
+
+// Without jQuery
+// Hide and show an element by changing "display" to block and none
+document.querySelector(".box").style.display = "none";
+document.querySelector(".box").style.display = "block";
+
+```
+
+# Document ready
+
+if you need to wait for the DOM to fully load before e.g. attaching events to objects in the DOM, you'd typically use `$(document).ready()` or the common short-hand `$()` in jQuery. We can easily construct a similar function to replace it with by listening to `DOMContentLoaded`:
+
+```javascript
+
+// With jQuery
+$(document).ready(function() { 
+  /* Do things after DOM has fully loaded */
+});
+
+// Without jQuery
+// Define a convenience method and use it
+var ready = (callback) => {
+  if (document.readyState != "loading") callback();
+  else document.addEventListener("DOMContentLoaded", callback);
+}
+
+ready(() => { 
+  /* Do things after DOM has fully loaded */ 
+});
+
+```
