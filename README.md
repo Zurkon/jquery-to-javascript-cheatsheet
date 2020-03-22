@@ -127,7 +127,7 @@ searchElement.addEventListener("click", handleClick);
 
 ## Triggering and creating events
 
-The equivalent to manually triggering events with `trigger()` can be achieved by calling `[dispatchEvent()](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/dispatchEvent)`, The `dispatchEvent()` method can be invoked on any element, and takes an `Event` as the first argument:
+The equivalent to manually triggering events with `trigger()` can be achieved by calling [`dispatchEvent()`] (https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/dispatchEvent), The `dispatchEvent()` method can be invoked on any element, and takes an `Event` as the first argument:
 
 ```javascript
 
