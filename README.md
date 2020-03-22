@@ -34,3 +34,35 @@ document.querySelectorAll(".box");
 
 ## Running a function on all elements in a selection
 `querySelectorAll()` returns a [NodeList](https://developer.mozilla.org/en-US/docs/Web/API/NodeList) containing all of the elements matching the query. Whereas you can run a function with jQuery on the entire selection of elements simply by calling the method on the jQuery object, however, you’ll have to iterate over the NodeList of elements using [NodeList.forEach()](https://developer.mozilla.org/en-US/docs/Web/API/NodeList/forEach) in vanilla JavaScript:
+
+```javascript
+
+// with jQuery
+// Hide all instances of .box
+$(".box").hide();
+
+// Without jQuery
+// Iterate over the nodelist of elements to hide all instances of .box
+document.querySelectorAll(".box").forEach(box => { box.style.display = "none" }
+
+```
+
+## Finding one element within another
+
+A common jQuery pattern is to select an element within another element using `.find()`. You can achieve the same effect, scoping the selection to an element's children, by calling `querySelector` or `querySelectorAll` on an element:
+
+```javascript
+
+// With jQuery
+// Select the first instance of .box within .container
+var container = $(".container");
+// Later...
+container.find(".box");
+
+// Without jQuery
+// Select the first instance of .box within .container
+var container = document.querySelector(".container");
+// Later...
+container.querySelector(".box");
+
+```
