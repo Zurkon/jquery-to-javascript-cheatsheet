@@ -307,3 +307,84 @@ fetch("data.json")
   });
 
 ```
+
+# HTML & Text
+
+If you want to dynamically create an element in javascript to add to the DOM you can call [createElement()](https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement) on `document` and pass it a tag name to indicate what element you want to create:
+
+```javascript
+
+// Create a div & span
+$("<div/>");
+$("<span/>");
+
+// Create a div and a span
+document.createElement("div");
+document.createElement("span");
+
+```
+
+If you want to add some content to those elements, you can simply set the `textContent` property, or create a text node with [createTextNode](https://developer.mozilla.org/en-US/docs/Web/API/Document/createTextNode) and append it to the element:
+
+```javascript
+
+var element = document.createElement("div");
+element.textContent = "Text"
+// or create a textNode and append it
+var text = document.createTextNode("Text");
+element.appendChild(text);
+
+```
+
+## Updating the DOM
+
+If you're looking to change the text of an element or to add new elements to the DOM chances are that you've come across `innerHTML()`, but using it may expose you to cross-site scripting (XSS) attacks. [Although you can work around it and sanitize the HTML](https://gomakethings.com/preventing-cross-site-scripting-attacks-when-using-innerhtml-in-vanilla-javascript/), there are some safer alternatives.
+
+If you're only looking to read or update the text of an element, you can use the [textContent](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent) property of an object to return the current text, or update it:
+
+```javascript
+
+// With jQuery
+// Update the text of a .button
+$(".button").text("New text");
+// Read the text of a .button
+$(".button").text(); // Returns "New text"
+
+// Without jQuery
+// Update the text of a .button
+document.querySelector(".button").textContent = "New text";
+// Read the text of a .button
+document.querySelector(".button").textContent; // Returns "New text"
+
+```
+
+If you're constructing a new element, you can then add that element to another element by using the method on the parent `appendChild()`:
+
+```javascript
+
+// Create div element and append it to .container
+$(".container").append($("<div/>"));
+
+// Create a div and append it to .container
+var element = document.createElement("div");
+document.querySelector(".container").appendChild(element);
+
+```
+
+Put together, here's how to create a div, update its text and class, and add it to the DOM:
+
+```javascript
+
+// Create a div
+var element = document.createElement("div");
+
+// Update its class
+element.classList.add("box");
+
+// Set its text
+element.textContent = "Text inside box";
+
+// Append the element to .container
+document.querySelector(".container").appendChild(element);
+
+```
