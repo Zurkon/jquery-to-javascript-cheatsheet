@@ -66,3 +66,26 @@ var container = document.querySelector(".container");
 container.querySelector(".box");
 
 ```
+
+## Traversing the tree with `parent()`, `next()`, and `prev()`
+
+If you wish to traverse the DOM to select a subling or a parent element relative to another element, you can access them through `nextElementSibling`, `previousElementSibling` and `parentElement` on that element:
+
+```javacript
+
+// with jQuery
+// Return the next, previous, and parent element of .box
+$(".box").next();
+$(".box").prev();
+$(".box").parent();
+
+// Without jQuery
+// Return the next, previous, and parent element of .box
+var box = document.querySelector(".box");
+box.nextElementSibling;
+box.previousElementSibling;
+box.parentElement;
+
+```
+
+# Events
