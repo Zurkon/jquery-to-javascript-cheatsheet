@@ -91,3 +91,54 @@ box.parentElement;
 # Events
 
 There's a myriad of ways to listen ti events in jQuery, but whether you're using `on()`, `.bind()`, `.live` or `.click()`, you'll make do with the Javascript equivalent `.addEventListener`:
+
+```javascript
+
+// With jQuery
+$(".button").click(function(e) { /* handle click event */ });
+$(".button").mouseenter(function(e) {  /* handle click event */ });
+$(document).keyup(function(e) {  /* handle key up event */  });
+
+// Without jQuery
+document.querySelector(".button").addEventListener("click", (e) => { /* ... */ });
+document.querySelector(".button").addEventListener("mouseenter", (e) => { /* ... */ });
+document.addEventListener("keyup", (e) => { /* ... */ });
+
+```
+
+## Event listening for dynamically added elements
+jQuery's `.on()` method enables you to work with "live" event handlers, where you listen to events on objects that get dynamically added to the DOM. To accomplish something similar without jQuery you can attach the event handler on an element as you add it to the DOM:
+
+```javascript
+
+// With jQuery
+// Handle click events .search-result elements, 
+// even when they're added to the DOM programmatically
+$(".search-container").on("click", ".search-result", handleClick);
+
+// Without jQuery
+// Create and add an element to the DOM
+var searchElement = document.createElement("div");
+document.querySelector(".search-container").appendChild(searchElement);
+// Add an event listener to the element
+searchElement.addEventListener("click", handleClick);
+
+```
+
+## Triggering and creating events
+
+The equivalent to manually triggering events with `trigger()` can be achieved by calling `[dispatchEvent()](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/dispatchEvent)`, The `dispatchEvent()` method can be invoked on any element, and takes an `Event` as the first argument:
+
+```javascript
+
+// With jQuery
+// Trigger myEvent on document and .box
+$(document).trigger("myEvent");
+$(".box").trigger("myEvent");
+
+// Without jQuery
+// Create and dispatch myEvent
+document.dispatchEvent(new Event("myEvent"));
+document.querySelector(".box").dispatchEvent(new Event("myEvent"));
+
+```
