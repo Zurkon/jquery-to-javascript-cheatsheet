@@ -6,3 +6,15 @@ jQuery is still a useful and pragmatic library, but chances are increasingly tha
 
 # Note
 This repository is just a copy from the blog page [move from jquery to vanilla javascript](https://tobiasahlin.com/blog/move-from-jquery-to-vanilla-javascript/) writed by [Tobias Ahlin](https://twitter.com/tobiasahlin) which means that i don't deserve any credits for this repo. I just put here for my personal and practical use but feel free to use on your own too.
+
+# Cheat sheet
+* [Selecting Elements](#selecting-elements)
+* [Events](#events)
+* [CSS](#css)
+* [Document Ready](#document-ready)
+* [Classes](#classes)
+* [Ajax](#ajax)
+* [HTML&Text](#html-&-text)
+
+# Selecting Elements
+Selecting one or several DOM elements to do something with is one of the most basic elements of jQuery. The equivalent to $() or jQuery() in JavaScript is [querySelector()](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector) or [querySelectorAll()](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll), which, just like with jQuery, you can call with a CSS selector.
