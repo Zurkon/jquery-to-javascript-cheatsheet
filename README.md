@@ -221,3 +221,89 @@ ready(() => {
 });
 
 ```
+
+# Classes
+
+You can easily access and work with classes through the [classList](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList) property to toggle, replace, add and remove classes:
+
+```javascript
+
+// With jQuery
+// Add, remove, and the toggle the "focus" class
+$(".box").addClass("focus");
+$(".box").removeClass("focus");
+$(".box").toggleClass("focus");
+
+// Without jQuery
+// Add, remove, and the toggle the "focus" class
+var box = document.querySelector(".box");
+box.classList.add("focus");
+box.classList.remove("focus");
+box.classList.toggle("focus");
+
+```
+
+If you want to remove or add multiple classes you can just pass multiple arguments to `.add()` and `.remove()`:
+
+```javascript
+
+// Add "focus" and "highlighted" classes, and then remove them
+var box = document.querySelector(".box");
+box.classList.add("focus", "highlighted");
+box.classList.remove("focus", "highlighted");
+
+```
+
+If you're toggling two classes that are mutually exclusive, you can access the `classList` property and call `.replace()` to replace one class with another:
+
+```javascript
+
+// Remove the "focus" class and add "blurred"
+document.querySelector(".box").classList.replace("focus", "blurred");
+
+```
+
+## Checking if an element has a class
+
+if you only want to run a function depending on if an element has a certain class, you can replace jQuery's `.hasClass()` with `.classList.contains()`:
+
+```javascript
+
+// With jQuery
+// Check if .box has a class of "focus", and do something
+if ($(".box").hasClass("focus")) {
+  // Do something...
+}
+
+// Without jQuery
+// Check if .box has a class of "focus", and do something
+if (document.querySelector(".box").classList.contains("focus")) {
+  // Do something...
+}
+
+```
+
+# Ajax
+
+[fetch()](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) lets you create network requests in a similar fashion to jQuery's `ajax()` and `get()` methods. `fetch()` takes a URL as an argument, and returns a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) that you can use to handle the response:
+
+```javascript
+
+// With jQuery
+$.ajax({
+    url: "data.json"
+  }).done(function(data) {
+    // ...
+  }).fail(function() {
+    // Handle error
+  });
+
+// Without jQuery
+fetch("data.json")
+  .then(data => {
+    // Handle data
+  }).catch(error => {
+    // Handle error
+  });
+
+```
