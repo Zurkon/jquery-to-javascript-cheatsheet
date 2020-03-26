@@ -324,7 +324,7 @@ document.createElement("span");
 
 ```
 
-If you want to add some content to those elements, you can simply set the `textContent` property, or create a text node with [`createTextNode`](https://developer.mozilla.org/en-US/docs/Web/API/Document/createTextNode) and append it to the element:
+If you want to add some content to those elements, you can simply set the `textContent` property, or create a text node with [`createTextNode()`](https://developer.mozilla.org/en-US/docs/Web/API/Document/createTextNode) and append it to the element:
 
 ```javascript
 
