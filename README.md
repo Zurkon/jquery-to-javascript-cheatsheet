@@ -144,7 +144,7 @@ document.querySelector(".box").dispatchEvent(new Event("myEvent"));
 ```
 # CSS
 
-If you're calling `.css()` on an element to change its inline CSS with jQuery, you'd use [.style](https://developer.mozilla.org/en-US/docs/Web/API/ElementCSSInlineStyle/style) in Javascript and assign values to its different properties to achieve the same effect:
+If you're calling `.css()` on an element to change its inline CSS with jQuery, you'd use [`.style`](https://developer.mozilla.org/en-US/docs/Web/API/ElementCSSInlineStyle/style) in Javascript and assign values to its different properties to achieve the same effect:
 
 ```javacript
 
@@ -224,7 +224,7 @@ ready(() => {
 
 # Classes
 
-You can easily access and work with classes through the [classList](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList) property to toggle, replace, add and remove classes:
+You can easily access and work with classes through the [`classList`](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList) property to toggle, replace, add and remove classes:
 
 ```javascript
 
@@ -285,7 +285,7 @@ if (document.querySelector(".box").classList.contains("focus")) {
 
 # Ajax
 
-[fetch()](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) lets you create network requests in a similar fashion to jQuery's `ajax()` and `get()` methods. `fetch()` takes a URL as an argument, and returns a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) that you can use to handle the response:
+[`fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) lets you create network requests in a similar fashion to jQuery's `ajax()` and `get()` methods. `fetch()` takes a URL as an argument, and returns a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) that you can use to handle the response:
 
 ```javascript
 
