@@ -17,7 +17,7 @@ This repository is just a copy from the blog page [move from jquery to vanilla j
 * [HTML & Text](#html-and-text)
 
 # Selecting Elements
-Selecting one or several DOM elements to do something with is one of the most basic elements of jQuery. The equivalent to $() or jQuery() in JavaScript is [querySelector()](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector) or [querySelectorAll()](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll), which, just like with jQuery, you can call with a CSS selector.
+Selecting one or several DOM elements to do something with is one of the most basic elements of jQuery. The equivalent to $() or jQuery() in JavaScript is [`querySelector()`](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector) or [querySelectorAll()](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll), which, just like with jQuery, you can call with a CSS selector.
 
 ```javascript
 
