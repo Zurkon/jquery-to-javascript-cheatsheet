@@ -310,7 +310,7 @@ fetch("data.json")
 
 # HTML and Text
 
-If you want to dynamically create an element in javascript to add to the DOM you can call [createElement()](https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement) on `document` and pass it a tag name to indicate what element you want to create:
+If you want to dynamically create an element in javascript to add to the DOM you can call [`createElement()`](https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement) on `document` and pass it a tag name to indicate what element you want to create:
 
 ```javascript
 
@@ -324,7 +324,7 @@ document.createElement("span");
 
 ```
 
-If you want to add some content to those elements, you can simply set the `textContent` property, or create a text node with [createTextNode](https://developer.mozilla.org/en-US/docs/Web/API/Document/createTextNode) and append it to the element:
+If you want to add some content to those elements, you can simply set the `textContent` property, or create a text node with [`createTextNode`](https://developer.mozilla.org/en-US/docs/Web/API/Document/createTextNode) and append it to the element:
 
 ```javascript
 
@@ -340,7 +340,7 @@ element.appendChild(text);
 
 If you're looking to change the text of an element or to add new elements to the DOM chances are that you've come across `innerHTML()`, but using it may expose you to cross-site scripting (XSS) attacks. [Although you can work around it and sanitize the HTML](https://gomakethings.com/preventing-cross-site-scripting-attacks-when-using-innerhtml-in-vanilla-javascript/), there are some safer alternatives.
 
-If you're only looking to read or update the text of an element, you can use the [textContent](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent) property of an object to return the current text, or update it:
+If you're only looking to read or update the text of an element, you can use the [`textContent`](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent) property of an object to return the current text, or update it:
 
 ```javascript
 
