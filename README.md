@@ -1,5 +1,5 @@
 # jQuery to Javascript Cheat sheet
-A Cheat sheet for moving from jQuery to vanilla Javascript
+A Cheat sheet for moving from jQuery to pure Javascript
 
 # Description
 jQuery is still a useful and pragmatic library, but chances are increasingly that you’re not dependent on using it in your projects to accomplish basic tasks like selecting elements, styling them, animating them, and fetching data—things that jQuery was great at. With broad browser support of ES6 ([over 96% at the time of writing](https://caniuse.com/#feat=es6)), now is probably a good time to move away from jQuery.
